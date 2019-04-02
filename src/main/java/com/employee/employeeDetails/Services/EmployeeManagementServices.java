@@ -15,21 +15,19 @@ public class EmployeeManagementServices {
 	@Autowired
 	EmployeeRepository empRep;
 
-	public List<Employee> empSalary(long salary,int age)  throws Exception {
+	public List<Employee> empSalary(long salary, int age, boolean status) throws Exception {
 
 		List<Employee> listEmp = new ArrayList<>();
-		
+
 		List<Employee> model = empRep.findAll();
 		model.forEach(empl -> {
-			if (empl.getSalary() >= salary && empl.getAge() >= age) {
-				
+			if (empl.getSalary() >= salary && empl.getAge() >= age && empl.getStatus()==status) {
+
 				listEmp.add(empl);
 				System.out.println(empl);
 			}
-		}); 	
-		return listEmp ;	
-
-		
+		});
+		return listEmp;
 
 	}
 

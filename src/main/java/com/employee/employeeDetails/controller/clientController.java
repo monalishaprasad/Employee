@@ -20,12 +20,12 @@ public class clientController {
 	private EmployeeManagementServices empService;
 	
 
-	@GetMapping("/getSal/{salary}/age/{age}")
-	public List<Employee> getSal(@PathVariable long salary,@PathVariable int age) {
+	@GetMapping("/getSal/{salary}/age/{age}/status/{status}")
+	public List<Employee> getSal(@PathVariable long salary,@PathVariable int age, @PathVariable boolean status) {
 	
-		List<Employee>  emp = new ArrayList<>() ;
+		List<Employee>  emp = new ArrayList<>();
 		try{
-			emp = empService.empSalary(salary,age);
+			emp = empService.empSalary(salary,age,status);
 		}catch(Exception e) {
 			return emp;
 		}

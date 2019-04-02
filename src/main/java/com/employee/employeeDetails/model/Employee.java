@@ -38,7 +38,7 @@ public class Employee {
 		this.employeeName = employeeName;
 	}
 
-	public boolean isStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 
